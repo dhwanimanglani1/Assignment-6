@@ -41,15 +41,6 @@ kwikEMart
     process.exit();
   });
 
-        db.on('error', (err) => {
-            reject(err);
-        });
-
-        db.once('open', () => {
-            User = db.model("users", userSchema);
-            resolve();
-        });
-
 module.exports.registerUser = (userData) =>
 {
     return new Promise((resolve,reject)=>
